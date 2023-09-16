@@ -1,0 +1,33 @@
+.show-border {
+    border: 1px solid black !important;
+}
+
+li {
+    padding-right: 1rem !important;
+}
+
+.body-spacing {
+    padding: 2rem;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 6rem;
+}
+
+.card-title-custom {
+    font-size: 1.2em;
+}
+.card-footer-custom {
+    color: #5e5e5e;
+    font-size: 0.85em;
+}
+
+.px-md-custom {
+    padding-left: 6rem !important;
+
+}
+

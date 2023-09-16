@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="accountSettings">
+    <option name="activeProfile" value="profile:default" />
+    <option name="activeRegion" value="eu-north-1" />
+    <option name="recentlyUsedProfiles">
+      <list>
+        <option value="profile:default" />
+        <option value="profile:964928314597_PowerUserAccess" />
+      </list>
+    </option>
+    <option name="recentlyUsedRegions">
+      <list>
+        <option value="eu-north-1" />
+        <option value="us-east-1" />
+      </list>
+    </option>
+  </component>
+  <component name="connectionManager">
+    <option name="activeConnectionId" value="sso;eu-north-1;https://d-c3671a9af6.awsapps.com/start#" />
+  </component>
+</project>
