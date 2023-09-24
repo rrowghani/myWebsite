@@ -7,7 +7,7 @@
             <%@include file="/WEB-INF/fragments/modal.jspf" %>
         </div>
     </div>
-
+    <br>
     <p class="text-center">Let me know that you were here. :)</p>
     <br>
 
@@ -21,7 +21,7 @@
                 <div class="row justify-content-center mb-5">
                     <div class="col-sm-6">
                         <div class="card border-primary mb-8">
-                            <div class="card-header card-title-custom bg-secondary-subtle">${e.name}</div>
+                            <div class="card-header card-title-custom bg-secondary-subtle">${e.name}<img class="float-end" src="https://flagsapi.com/${e.country}/flat/64.png" width="30"></div>
                             <div class="card-body">
                                 <p class="card-text">${e.comment}</p>
                             </div>

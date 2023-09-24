@@ -4,7 +4,7 @@
 <c:choose>
     <c:when test="${result == 'success'}">
         <div class="text-center">
-            strong>Email send!</strong> You will be automatically redirected...
+            <strong>Email send!</strong> You will be automatically redirected...
         </div>
         <meta http-equiv="Refresh" content="3; url='./pictures?category=People'"/>
     </c:when>

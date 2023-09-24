@@ -1,10 +1,16 @@
 <%@include file="/WEB-INF/fragments/head.jspf" %>
 
-  <div style="margin-top: 2rem">
+  <div class="mt-5">
     <c:forEach items="${pictures}" var="p">
       <div class="image-container">
-        <img src="${applicationScope.imagesFolder}${p.id}.jpg" width="60%" class="img-fluid mb-2" alt="${p.id}">
-        <p>${p.description}</p>
+        <div class="row justify-content-center">
+
+          <div class="col-lg-5 col-md-6 col-xl-4">
+            <img src="${applicationScope.imagesFolder}/${category}/${p.id}.jpg" class="img-fluid mb-2" alt="${p.id}">
+            <p class="mt-2">${p.description}</p>
+          </div>
+        </div>
+
       </div>
 
     </c:forEach>

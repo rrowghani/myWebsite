@@ -20,9 +20,9 @@ public class PictureDao extends ParentDao {
         String sql = "SELECT * FROM PICTURES WHERE Id=?";
         return (Picture) jdbcTemplate.queryForObject(sql, rm, Id);
     }
-
+    @SuppressWarnings("unchecked")
     public List<Picture> retrievePicturesByCategory(String category) {
-        String sql = "SELECT * FROM PICTURES WHERE Category=? ORDER BY TimeStamp DESC";
+        String sql = "SELECT * FROM PICTURES WHERE Category=?";
         return (List<Picture>) jdbcTemplate.query(sql, rm, category);
     }
 }

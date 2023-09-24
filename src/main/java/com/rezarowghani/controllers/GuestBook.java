@@ -19,13 +19,14 @@ public class GuestBook {
         model.addAttribute("entries", guestBookDao.getGuestBookEntries());
         return "guestBook";
     }
-    @RequestMapping(value = "/addEntryGuestBook", params = {"name","message"}
+    @RequestMapping(value = "/addEntryGuestBook", params = {"name","message", "country"}
     )
     public String addGuestBookEntry(
             @RequestParam(value = "name") String name,
-            @RequestParam(value = "message") String message
+            @RequestParam(value = "message") String message,
+            @RequestParam(value = "country") String country
     ) {
-        guestBookDao.addEntry(name, message);
+        guestBookDao.addEntry(name, message, country);
         return "redirect:guestBook";
     }
 }

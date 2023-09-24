@@ -16,4 +16,5 @@ public class GuestBook {
     private String Name;
     private String Comment;
     private Date TimeStamp;
+    private String Country;
 }

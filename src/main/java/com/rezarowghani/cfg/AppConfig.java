@@ -21,7 +21,7 @@ import javax.sql.DataSource;
 @PropertySource("classpath:jdbc.properties")
 public class AppConfig implements WebMvcConfigurer {
 
-    Environment env;
+    static Environment env;
 
     public AppConfig(Environment env) {
         this.env = env;
