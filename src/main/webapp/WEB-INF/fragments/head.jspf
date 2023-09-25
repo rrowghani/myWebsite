@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="./assets/custom.css">
 </head>
 <body>
+<section class="position-fixed navbar-custom d-flex justify-content-center" style="width: 100%; z-index: 1000">
+    <%@include file="/WEB-INF/fragments/navBar.jspf" %>
+    <%@taglib uri="jakarta.tags.core" prefix="c" %>
+</section>
 <main class="body-spacing">
-    <div>
-        <%@include file="/WEB-INF/fragments/navBar.jspf" %>
-        <%@taglib uri="jakarta.tags.core" prefix="c" %>
-    </div>

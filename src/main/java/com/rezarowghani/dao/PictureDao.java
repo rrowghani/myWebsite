@@ -12,7 +12,7 @@ public class PictureDao extends ParentDao {
     public PictureDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
         rm = (rs, rowNum) -> {
-            return new Picture(rs.getString("Id"), rs.getString("Category"), rs.getString("Description"));
+            return new Picture(rs.getString("Id"), rs.getString("Category"), rs.getString("Path"), rs.getString("Description"));
         };
     }
 

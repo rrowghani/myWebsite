@@ -12,5 +12,6 @@ import lombok.*;
 public class Picture {
     private String Id;
     private String Category;
+    private String Path;
     private String Description;
 }

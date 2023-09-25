@@ -31,3 +31,30 @@ li {
 
 }
 
+.navbar-custom {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+}
+
+.disappear {
+    opacity: 1;
+    transition: 0.05s all ease;
+}
+
+.disappear.thisOne {
+    opacity: 0;
+}
+
+.shrink {
+    width: 100%;
+    transition: 0.1s all ease;
+}
+
+.shrink.thisOne {
+    width: 50%;
+}
+
+/*#navbarColor03 {*/
+/*    display: none !important;*/
+/*}*/

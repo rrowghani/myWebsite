@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
 
           <div class="col-lg-5 col-md-6 col-xl-4">
-            <img src="${applicationScope.imagesFolder}/${category}/${p.id}.jpg" class="img-fluid mb-2" alt="${p.id}">
+            <img src="${applicationScope.imagesFolder}/${p.path}.jpg" class="img-fluid mb-2" alt="${p.id}">
             <p class="mt-2">${p.description}</p>
           </div>
         </div>
