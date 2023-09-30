@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class GuestBook {
+public class GuestBook extends ControllerParent{
     private GuestBookDao guestBookDao;
 
     public GuestBook(GuestBookDao guestBookDao) {
@@ -28,5 +28,10 @@ public class GuestBook {
     ) {
         guestBookDao.addEntry(name, message, country);
         return "redirect:guestBook";
+    }
+
+    @Override
+    protected String setControllerType() {
+        return "guestbook";
     }
 }

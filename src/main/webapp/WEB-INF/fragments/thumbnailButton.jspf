@@ -1,0 +1,20 @@
+<div class="row mb-5 showPicturesButton">
+    <div class="col">
+        <form class="float-end" action="./pictures" id="picsSwitchForm" onchange="submitForm();">
+            <input type="text" value="${category}" name="category" style="visibility: hidden">
+            <div class="form-check form-switch">
+                <c:choose>
+                    <c:when test="${switchChecked}">
+                        <input class="form-check-input" type="checkbox" id="picsSwitch" name="picsSwitch" value="true"
+                               checked="">
+                    </c:when>
+                    <c:otherwise>
+                        <input class="form-check-input" type="checkbox" id="picsSwitch" name="picsSwitch" value="true">
+                    </c:otherwise>
+                </c:choose>
+
+                <label class="form-check-label emphasis-animation" for="picsSwitch">Pics as thumbnails?</label>
+            </div>
+        </form>
+    </div>
+</div>

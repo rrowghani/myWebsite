@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Objects;
 
 @Controller
-public class ContactMe {
+public class ContactMe extends ControllerParent{
 
     // Replace recipient@example.com with a "To" address. If your account
     // is still in the sandbox, this address must be verified.
@@ -60,6 +60,11 @@ public class ContactMe {
             return new ModelAndView("redirect:/actionResult?result=failure");
         }
         return new ModelAndView("redirect:/actionResult?result=success");
+    }
+
+    @Override
+    protected String setControllerType() {
+        return "contactMe";
     }
 
     @RequestMapping(value = "/actionResult", params = {"result"})

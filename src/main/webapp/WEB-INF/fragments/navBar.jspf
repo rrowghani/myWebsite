@@ -1,29 +1,38 @@
+<c:set var="navProperties" value="navbar navbar-expand-lg bg-body-tertiary" />
+<c:set var="divProperties" value="container-fluid" />
+    <c:if test='${page.equals("pictures") || page.equals("guestbook")}'>
+        <c:set var="navProperties" value="${navProperties} shrink" />
+        <c:set var="divProperties" value="${divProperties} disappear" />
+    </c:if>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-secondary-subtle shrink">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><h2>Reza Rowghani</h2></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarColor03">
-                <ul class="navbar-nav me-auto px-lg-6 px-xxl-6" >
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle disappear" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Photos</a>
-                        <div class="dropdown-menu bg-secondary-subtle">
-                            <a class="nav-link active" href="./pictures?category=People">People</a>
-                            <a class="nav-link" href="./pictures?category=Places">Places</a>
-                            <a class="nav-link" href="./pictures?category=Sights">Sights and Sounds</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disappear" href="./guestBook">Guest Book</a>
-                    </li>
-                    <li class="nav-item float-end">
-                        <a class="nav-link disappear" href="./contactMe">Contact me</a>
-                    </li>
-                </ul>
-            </div>
+<nav class="${navProperties}" style="width: 100%;" data-bs-theme="light">
+    <div class="${divProperties}">
+        <a class="navbar-brand" href="#" ><h2>Reza Rowghani</h2></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+                aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav me-auto px-lg-6 px-xxl-6">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true" aria-expanded="false">Photos</a>
+                    <div class="dropdown-menu bg-body-tertiary">
+                        <a class="nav-link active" href="./pictures?category=People">People</a>
+                        <a class="nav-link" href="./pictures?category=Places">Places</a>
+                        <a class="nav-link" href="./pictures?category=As_It_Is">As it is</a>
+                        <a class="nav-link" href="./pictures?category=Black_And_White">Black and White</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./guestBook">Guest Book</a>
+                </li>
+                <li class="nav-item float-end">
+                    <a class="nav-link" href="./contactMe">Contact me</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
 

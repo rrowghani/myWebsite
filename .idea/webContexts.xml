@@ -4,6 +4,7 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/modal.jspf" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments/printPicture.jspf" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/fragments" />
       </map>
     </option>
   </component>

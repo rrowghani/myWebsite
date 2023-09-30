@@ -14,4 +14,5 @@ public class Picture {
     private String Category;
     private String Path;
     private String Description;
+    private String SubCategory;
 }

@@ -1,9 +1,6 @@
+<%@taglib uri="jakarta.tags.core" prefix="c" %>
 <%@include file="/WEB-INF/fragments/head.jspf" %>
-<br>
-<br>
-<p class="text-center">Let me know what's on your mind. :)</p>
-<br>
-<br>
+
 <form class="card p-3 bg-secondary-subtle" action="./sendEmail" method="get">
     <br>
     <div class="row">
