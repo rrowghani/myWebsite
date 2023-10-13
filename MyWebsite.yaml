@@ -1,0 +1,20 @@
+version: '3'
+services:
+  MyApache:
+    image: mywebsiteapache:1.0
+    build: /.
+    ports:
+      - 80:80
+  MyWebsiteSQLContainer:
+    image: mywebsitesql:1.0
+    build: /MySQL/.
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: Pkcntz03!03!
+      MYSQL_DATABASE: MyWebsite
+    volumes:
+      - mysql-data:/var/lib/mysql
+volumes:
+  mysql-data:
+    driver: local

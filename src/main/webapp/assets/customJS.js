@@ -8,7 +8,7 @@ function submitForm() {
 }
 
 function transformNav() {
-
+    document.querySelector(".navbar-toggler").style.display = "none";
   let elements = document.querySelectorAll(".disappear");
   for (let i=0; i<elements.length;i++) {
       elements[i].classList.add("thisOne");
@@ -18,6 +18,9 @@ function transformNav() {
 }
 
 function resetNav() {
+    if (window.innerWidth < 992) {
+        document.querySelector(".navbar-toggler").style.display = "block";
+    }
     document.querySelector(".arrow-up").classList.remove("fade-in");
     let elements = document.querySelectorAll(".disappear");
     for (let i = 0; i < elements.length; i++) {
@@ -31,16 +34,20 @@ function resetNav() {
 function scrollToTop() {
     window.scrollTo(0,0);
 }
-
-function enlarge(img, path) {
-    window.location.href = path + "/singlePicture?path=" + img.src + "&category=test2";
+function backToPictures(path, scrollAmount) {
+    window.location.href = path;
+    window.scrollTo(0, scrollAmount);
+}
+function enlarge(domObj, path, category, switchChecked) {
+    window.location.href = path + "/singlePicture?path=" + domObj.children[1].src + "&category=" + category + "&picsSwitch=" + switchChecked + "&scrollAmount=" + window.scrollY;
 }
 window.addEventListener("scroll", () => {
 
     if (this.scrollY < 20) {
         resetNav();
         return;
-    } else {
+    }
+    else if (this.scrollY > 800){
         document.querySelector(".arrow-up").classList.add("fade-in");
     }
     transformNav();

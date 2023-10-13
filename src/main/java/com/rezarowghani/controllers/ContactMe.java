@@ -53,10 +53,7 @@ public class ContactMe extends ControllerParent{
                                     .withCharset("UTF-8").withData(SUBJECT)))
                     .withSource(FROM);
             client.sendEmail(request);
-            System.out.println("Email sent!");
         } catch (Exception ex) {
-            System.out.println("The email was not sent. Error message: "
-                    + ex.getMessage());
             return new ModelAndView("redirect:/actionResult?result=failure");
         }
         return new ModelAndView("redirect:/actionResult?result=success");

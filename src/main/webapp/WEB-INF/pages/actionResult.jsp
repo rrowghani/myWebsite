@@ -1,3 +1,4 @@
+<%@taglib uri="jakarta.tags.core" prefix="c" %>
 <%@include file="/WEB-INF/fragments/head.jspf" %>
 <br>
 <br>
@@ -20,5 +21,5 @@
 
     </c:otherwise>
 </c:choose>
-
+<%@include file="/WEB-INF/fragments/bottom.jspf" %>
 

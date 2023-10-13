@@ -9,17 +9,18 @@
 <c:choose>
     <c:when test="${switchChecked}">
         <%--pics as thumbnails--%>
-        <div class="row justify-content-center align-items-center row-gap-5">
+        <div class="row justify-content-center align-items-center row-gap-3">
             <c:forEach items="${pictures.keySet()}" var="p" varStatus="status">
-                <c:if test="${p.equals('Places') && !p.equals('As_It_Is') && !p.equals('Black_And_White')}">
+                <c:if test="${!p.equals('People') && !p.equals('As_It_Is') && !p.equals('Black_And_White')}">
 
-                    ${status.first ? '<h2>' : '<h2 class="picture-category-heading">'}
+<%--                    ${status.first ? '<h2>' : '<h2 class="picture-category-heading">'}--%>
+                    <h2 class="picture-category-heading">
                     ${p}
                     </h2>
-                    <br>
+
                 </c:if>
                 <c:forEach items="${pictures.get(p)}" var="q">
-                    <div class="col-xl-4 zoom" style="position: relative">
+                    <div class="col-xl-4 zoom" style="position: relative" onclick="enlarge(this, '${baseURL}', '${category}', '${switchChecked}')">
                         <p>${q.description}</p>
                         <img src="${applicationScope.imagesFolder}/${q.path}.jpg" class="img-fluid mb-2" alt="${q.id}">
                     </div>
@@ -32,17 +33,18 @@
         <div class="mt-5">
             <c:forEach items="${pictures.keySet()}" var="p" varStatus="status">
                 <c:if test="${!p.equals('People') && !p.equals('As_It_Is') && !p.equals('Black_And_White')}">
-                    ${status.first ? '<h2>' : '<h2 class="picture-category-heading">'}
+<%--                    ${status.first ? '<h2>' : '<h2 class="picture-category-heading">'}--%>
+                    <h2 class="picture-category-heading">
                     ${p}
                     </h2>
                 </c:if>
                 <c:forEach items="${pictures.get(p)}" var="q">
                     <div class="image-container">
                         <div class="row justify-content-center">
-                            <div class="col-lg-5 col-md-8 col-xl-6 zoom" style="position: relative">
+                            <div class="col-lg-5 col-md-10 col-xl-6 zoom" style="position: relative" onclick="enlarge(this, '${baseURL}', '${category}')">
                                 <p class="mt-2">${q.description}</p>
                                 <img src="${applicationScope.imagesFolder}/${q.path}.jpg" class="img-fluid mb-2"
-                                     alt="${q.id}">
+                                     alt="${q.id}" >
                             </div>
                         </div>
                     </div>
@@ -52,6 +54,8 @@
         </div>
     </c:otherwise>
 </c:choose>
-
+<script>
+    window.scrollTo(0, ${scrollAmount.doubleValue()});
+</script>
 
 <%@include file="/WEB-INF/fragments/bottom.jspf" %>

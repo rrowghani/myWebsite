@@ -7,7 +7,7 @@
 
 <nav class="${navProperties}" style="width: 100%;" data-bs-theme="light">
     <div class="${divProperties}">
-        <a class="navbar-brand" href="#" ><h2>Reza Rowghani</h2></a>
+        <a class="navbar-brand" href="./pictures?category=People" ><h2>Reza Rowghani</h2></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
                 aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

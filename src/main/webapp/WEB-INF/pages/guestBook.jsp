@@ -2,7 +2,7 @@
 <%@include file="/WEB-INF/fragments/head.jspf" %>
 
 <div class="container" style="margin-top: 2rem">
-    <div class="row">
+    <div class="row" style="margin-bottom: 2rem">
         <div class="col">
             <%@include file="/WEB-INF/fragments/modal.jspf" %>
         </div>

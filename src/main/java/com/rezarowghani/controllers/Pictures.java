@@ -11,9 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.*;
+
 @Controller
 @ControllerAdvice
-public class Pictures extends ControllerParent{
+public class Pictures extends ControllerParent {
     @Override
     protected String setControllerType() {
         return "pictures";
@@ -25,36 +26,41 @@ public class Pictures extends ControllerParent{
         this.pictureDao = pictureDao;
     }
 
-    @RequestMapping(value="/singlePicture")
-    public String getPicture(@RequestParam(value="path") String path,
-                             @RequestParam(value="category") String category,
+    @RequestMapping(value = "/singlePicture")
+    public String getPicture(@RequestParam(value = "path") String path,
+                             @RequestParam(value = "category") String category,
+                             @RequestParam(value = "scrollAmount") double scrollAmount,
+                             @RequestParam(value = "picsSwitch") String picsSwitch,
                              Model model) {
+
         model.addAttribute("path", path);
+        model.addAttribute("picsSwitch", Objects.equals(picsSwitch, "true"));
+        model.addAttribute("scrollAmount", scrollAmount);
         model.addAttribute("category", category);
-        System.out.println(path);
-        System.out.println(category);
         return "picture";
 
     }
+
     @RequestMapping(value = "/pictures")
     public String getPicture(@RequestParam(value = "category") String category,
                              @RequestParam("picsSwitch") Optional
                                      <String> picsSwitchOption,
+                             @RequestParam("scrollAmount") Optional<Double> scrollAmountOption,
                              Model model) {
+        Double scrollAmount = scrollAmountOption.orElse(0.0);
         String picsSwitch = picsSwitchOption.orElse("false");
+
         model.addAttribute("picsSwitch", Objects.equals(picsSwitch, "true"));
+        model.addAttribute("scrollAmount", scrollAmount);
         model.addAttribute("category", category);
 
         List<String> retrieveSubCategories = pictureDao.retrieveSubCategories(category);
-        System.out.println(retrieveSubCategories);
+
         List<Picture> picturesFromDatabase = pictureDao.retrievePicturesByCategory(category);
         Map<String, List<Picture>> picturesBySubCategory = new HashMap<>();
-        retrieveSubCategories.forEach((subCat)-> {
+        retrieveSubCategories.forEach((subCat) -> {
             picturesBySubCategory.put(subCat, picturesFromDatabase.stream().filter((picture) -> picture.getSubCategory().equals(subCat)).toList());
         });
-        //System.out.println(Arrays.toString(picturesFromDatabase.stream().filter(picture -> Objects.nonNull(picture.getSubCategory())).toArray()));
-        //System.out.println(picturesFromDatabase.stream().filter((picture) -> picture.getSubCategory() != null).toList());
-        System.out.println(picturesBySubCategory);
         model.addAttribute("pictures", picturesBySubCategory);
         return "pictures";
     }

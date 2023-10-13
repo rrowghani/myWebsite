@@ -13,7 +13,7 @@
                     </c:otherwise>
                 </c:choose>
 
-                <label class="form-check-label emphasis-animation" for="picsSwitch">Pics as thumbnails?</label>
+                <label class="form-check-label" for="picsSwitch">Pics as thumbnails?</label>
             </div>
         </form>
     </div>
